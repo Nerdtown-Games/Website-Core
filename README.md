@@ -1,4 +1,4 @@
-# README file can be found at:
+# README files can be found at:
 
 * `/files/images/icons/README.md`
 * `/files/images/overlay/README.md`
