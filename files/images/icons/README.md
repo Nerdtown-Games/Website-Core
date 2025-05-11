@@ -1,0 +1,1 @@
+Each image must be 200x200 pixels otherwise the overlay will not work

@@ -1,0 +1,83 @@
+/* Custom cursor definitions */
+:root {
+    --cursor-auto: url('/files/images/mouse/normal.cur'), auto;
+    --cursor-loading: url('/files/images/mouse/loading.ani'), wait;
+    --cursor-text: url('/files/images/mouse/text.cur'), text;
+    --cursor-grab: url('/files/images/mouse/grab.cur'), grab;
+    --cursor-not-allowed: url('/files/images/mouse/no.cur'), not-allowed;
+    --cursor-pointer: url('/files/images/mouse/grab.cur'), pointer;
+    --cursor-no-drop: url('/files/images/mouse/no.cur'), no-drop;
+}
+
+/* Default cursor for all elements */
+* {
+    cursor: var(--cursor-auto);
+}
+
+/* Grab cursor for specific elements */
+a,
+button,
+input[type="button"],
+span.close-btn, /* Increased specificity with element type */
+toggle-link *,
+switch-to-login *,
+input[type="submit"],
+button[type="submit"]:hover,
+input[type="reset"],
+.category-item,
+.game-item,
+.home-button,
+.home-button a,
+.category-item *,
+.pointer,
+.game-item *,
+canvas,
+.friend-card:hover *,
+label,
+button,
+.fas,
+img.controls,
+.controls img {
+    cursor: var(--cursor-grab) !important; /* Added !important to override potential conflicts */
+}
+
+/* Ensure hover state shows grab cursor */
+a:hover,
+button:hover,
+input[type="button"]:hover,
+span.close-btn:hover, /* Increased specificity for hover */
+input[type="submit"]:hover,
+.category-item:hover,
+.game-item:hover,
+.home-button:hover,
+.category-item:hover *,
+.game-item:hover *,
+img.controls:hover,
+.controls img:hover,
+.home-button:hover * {
+    cursor: var(--cursor-grab) !important; /* Added !important for hover state */
+}
+
+/* Special cursor for loading */
+.loading {
+    cursor: var(--cursor-loading);
+}
+
+/* Ensure text cursor for inputs and text areas */
+input, textarea {
+    cursor: var(--cursor-text);
+}
+
+/* Not allowed cursor */
+.not-allowed {
+    cursor: var(--cursor-not-allowed);
+}
+
+/* Ensure grab cursor for #account-btn */
+#account-btn {
+    cursor: var(--cursor-grab);
+}
+
+#account-btn:hover {
+    cursor: var(--cursor-grab);
+}

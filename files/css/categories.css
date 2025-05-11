@@ -1,0 +1,178 @@
+
+/* Font Face */
+@font-face {
+    font-family: 'Coconutz';
+    src: url('/files/css/Coconutz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font globally */
+body {
+    font-family: 'Coconutz', sans-serif;
+}
+
+/* Specific styles */
+h1, h2, h3, p {
+    font-family: 'Coconutz', sans-serif; /* Apply to headers and paragraphs */
+}
+
+button, .account-btn {
+    font-family: 'Coconutz', sans-serif; /* Apply to buttons */
+}/* Base Styles */
+body {
+    font-family: 'Coconutz', Arial, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #b6b6b660;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #222;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.game-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 200px;
+    margin: auto;
+}
+
+.game-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.game-item h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #444;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.category-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.category-item span {
+    font-size: 16px;
+    color: inherit; /* Make the link color inherit from the parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.category-item:hover {
+    background-color: #e0e0e0;
+}
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
+}
+/* Dark Mode Styles 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    h1 {
+        color: #e0e0e0;
+    }
+
+    .search-box input {
+        background-color: #333;
+        border: 1px solid #555;
+        color: #e0e0e0;
+    }
+
+    .categories-container {
+        background-color: #1e1e1e;
+        border: 1px solid #444;
+    }
+
+    .category-item {
+        background-color: #1e1e1e;
+        border: 1px solid #444;
+    }
+
+    .category-item:hover {
+        background-color: #333;
+    }
+
+    .category-item img {
+        filter: brightness(0.8);
+    }
+}*/

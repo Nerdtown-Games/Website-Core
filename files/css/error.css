@@ -1,0 +1,78 @@
+/* Font Face */
+@font-face {
+    font-family: 'Coconutz';
+    src: url('Coconutz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Coconutz', Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #b6b6b6 30%, #ffffff 100%);
+}
+
+/* Error Box */
+.error-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #333;
+}
+
+h2 {
+    font-size: 36px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Home Button */
+.home-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #2980b9;
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

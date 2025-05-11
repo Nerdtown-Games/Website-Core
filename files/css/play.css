@@ -1,0 +1,362 @@
+@font-face {
+    font-family: 'Coconutz';
+    src: url('Coconutz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base Styles */
+:root {
+    --background-color: #b6b6b6;
+    --text-color: #000;
+    --card-background: #fff;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Coconutz', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background-color: #b6b6b660;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    max-width: 20px;
+}
+
+.home-button a img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Game Details Styling */
+.game-details {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    text-align: center;
+    transition: margin-top 0.3s ease, opacity 0.3s ease; /* Added opacity transition */
+}
+
+.game-details h1 {
+    margin-top: 0;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.game-thumbnail {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+iframe {
+    border: none;
+    overflow: hidden;
+    width: calc(140vw * (9 / 15));
+    height:  100%;/*calc(100vw * (9 / 15));  Slightly narrower aspect ratio */
+    text-align: center;
+    border-radius: 10px;
+    transition: height 0.3s ease, width 0.3s ease;
+}
+
+#status{
+    height: 120px;
+}
+
+
+
+p {
+    font-size: 18px;
+}
+
+/* Creator Details Styling */
+.creator-details {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--shadow-color);
+    text-align: center;
+    max-width: 1200px;
+    width: calc(146vw * (9 / 15));
+    height: 100%;
+}
+
+.creator-thumbnail img {
+    max-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.creator-name {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.creator-studio {
+    font-size: 14px;
+    color: #666;
+}
+
+.game-description {
+    margin-top: 20px;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+/* Advanced Styling for iframe */
+#iframe-container {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    overflow: hidden;
+    height: 80vh;
+    transition: height 0.3s ease;
+}
+
+/* Controls */
+#controls {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    opacity: 0; /* Fully transparent initially */
+    transition: opacity 0.3s ease; /* Transition for smooth effect */
+}
+
+#controls:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
+#controls a {
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Make sure links behave like blocks for padding */
+    margin-right: 5px; /* Space between buttons */
+}
+
+#controls a img {
+    background-color: rgba(250, 250, 250, 0.5); /* Slightly transparent background */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    width: 24px; /* Set the image size */
+    height: 24px; /* Set the image size */
+}
+
+#controls a img:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Lighter on hover */
+}
+
+
+
+/* Fullscreen Mode Styles */
+.fullscreen-mode #iframe-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.fullscreen-mode iframe {
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen-mode .game-details {
+    margin-top: 60px;
+}
+
+/* Error Handling Styles */
+#iframe-container-error {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    overflow: hidden;
+}
+
+#iframe-container-error h2 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+#iframe-container-error h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+/* Button Styles */
+button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Dark Mode Styles */
+/* Uncomment the following block for dark mode */
+/*
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1e1e1e;
+        --text-color: #f4f4f4;
+        --card-background: #2a2a2a;
+        --border-color: #444;
+        --shadow-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .creator-studio {
+        color: #bbb;
+    }
+}
+*/
+
+/* Loading indicator styles */
+#loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #000;
+    z-index: 1000;
+}
+
+/* Share Button Styles */
+#controls a#share {
+    display: inline-block; /* Ensures proper spacing */
+    margin-right: 5px; /* Space between the share button and the next button */
+}
+
+#controls a#share img {
+    background-color: rgba(250, 250, 250, 0.5); /* Slightly transparent background */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    width: 24px; /* Set the image size */
+    height: 24px; /* Set the image size */
+}
+
+#controls a#share img:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Lighter on hover */
+}
+
+/* Notification Styles */
+#notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #60d15a;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+/* Minimize Button Styles */
+#minimize {
+    display: none; /* Hide the minimize button by default */
+}
+
+/* Controls Styles */
+#controls {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    opacity: 1; /* Fully transparent initially */
+    transition: opacity 0.3s ease; /* Transition for smooth effect */
+}
+
+
+/* Ensure the minimize button is hidden when not hovering */
+#controls #minimize {
+    display: none; /* Ensures the minimize button is hidden */
+}
+        /* Styling the iframe and like-dislike section */
+
+        #like-dislike-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            gap: 20px;
+        }
+        .like-dislike {
+            display: flex;
+            align-items: center;
+        }
+        .like-dislike img {
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
+        }
+        #ratio-bar-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        #ratio-bar {
+            height: 100%;
+            background-color: #007bff;
+            border-radius: 10px;
+        }
+

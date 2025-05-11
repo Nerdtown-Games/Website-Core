@@ -1,0 +1,13 @@
+{
+    "name": "Game 1",
+    "date_added": "2025-05-11",
+    "creator": "Nerdtown Games",
+    "likes": 0,
+    "dislikes": 0,
+    "description": "This is a game description \n this is a new line",
+    "categories": [
+        "Arcade",
+        "Sports",
+        "Horror"
+    ]
+}

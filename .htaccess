@@ -1,0 +1,23 @@
+# Enable RewriteEngine
+RewriteEngine On  
+
+RewriteRule ^creator/(.+)$ /creator.php?creator=$1 [L,QSA]
+RewriteRule ^category/(.+)$ /category.php?category=$1 [L,QSA]
+RewriteRule ^play/(.+)$ /play.php?game=$1 [L,QSA]  
+
+# Custom Error Pages
+ErrorDocument 401 /files/error_pages/401.html
+ErrorDocument 404 /files/error_pages/404.html
+ErrorDocument 403 /files/error_pages/403.html
+ErrorDocument 500 /files/error_pages/500.html  
+
+# Rewrite rule for dynamic images
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^files/images/icons/([^/]+)/([^/]+)$ /files/images/icons/index.php?ov_image=$1&image=$2 [QSA,L]  
+
+
+# Handle 404 errors for non-existent files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ - [R=404,L]  
